@@ -1,5 +1,5 @@
 "use client";
-import Input from "@/components/Input";
+import Input from "@/components/Input/Input";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import axios from "axios";

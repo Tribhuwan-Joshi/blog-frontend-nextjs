@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import Input from "@/components/Input";
+import Input from "@/components/Input/Input";
 import { useRouter } from "next/navigation";
 import { useState, FormEvent } from "react";
 import { signIn } from "next-auth/react";
