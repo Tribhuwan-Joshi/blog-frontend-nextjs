@@ -15,7 +15,7 @@ export default function Navbar({ currentUser }: UserMenuProps) {
     <header>
       <nav className="bg-gray-200 flex justify-between px-4 py-6 shadow-xl">
         <div>{currentUser?.name}</div>
-
+        <h1>All opinions are my own - Tjsm</h1>
         <div className="flex gap-4">
           <Link href="/">Home</Link>
           <Link href="/create">Create</Link>

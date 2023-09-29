@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState, FormEvent } from "react";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
+import { Metadata } from "next";
 interface InitialStateProps {
   email: string;
   password: string;
