@@ -1,7 +1,7 @@
 "use client";
 
 // import getCurrentUser from "@/app/actions/getCurrentUser";
-import { SafeUser } from "@/types/index";
+// import { SafeUser } from "@/types/index";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
