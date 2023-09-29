@@ -17,10 +17,10 @@ model User {
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
 
-  listings Listing[]
+  blogs Blog[]
 }
 
-model Listing {
+model Blog {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   name        String
   createdAt   DateTime @default(now())
@@ -28,5 +28,5 @@ model Listing {
   description String
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId      String   @db.ObjectId
-  likedIds    String[] @db.ObjectId
+  // likedIds    String[] @db.ObjectId
 }

@@ -2,7 +2,7 @@
 "use client";
 import Input from "@/components/Input";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 interface InitialStateProps {
@@ -17,7 +17,7 @@ const initialState: InitialStateProps = {
 const Page = () => {
   const router = useRouter();
   const [state, setState] = useState<InitialStateProps>(initialState);
-  const onSubmit = (event: React.FormEvent) => {
+  const onSubmit = (event: FormEvent) => {
     event.preventDefault();
 
     signIn("credentials", {
