@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import Image from "next/image";
 import ImageUpload from "./ImageUpload";
-import Input from "./input/Input";
+import Input from "./Input/Input";
 import { toast } from "react-hot-toast";
 
 interface BlogProps {

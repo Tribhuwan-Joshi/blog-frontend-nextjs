@@ -19,7 +19,7 @@ const initialState: InitalStateProps = {
   description: "",
 };
 
-export default function page() {
+export default function Page() {
   const [state, setState] = useState(initialState);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
