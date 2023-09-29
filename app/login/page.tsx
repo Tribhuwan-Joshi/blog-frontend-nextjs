@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import Input from "@/components/Input";
 import { useRouter } from "next/navigation";
@@ -5,12 +6,10 @@ import { useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 interface InitialStateProps {
-  name: string;
   email: string;
   password: string;
 }
 const initialState: InitialStateProps = {
-  name: "",
   email: "",
   password: "",
 };
@@ -21,18 +20,19 @@ const Page = () => {
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    axios
-      .post("/api/register", state)
-      .then(() => {
+    signIn("credentials", {
+      ...state,
+      redirect: false,
+    }).then((callback) => {
+      if (callback?.ok) {
         router.refresh();
-      })
-      .then(() => {
-        setTimeout(() => {
-          router.push("/login");
-        }, 2500);
-      })
-      .catch((err: any) => {})
-      .finally(() => {});
+      }
+
+      if (callback?.error) {
+        throw new Error("Wrong Credentials");
+      }
+    });
+    router.push("/");
   };
   function handleChange(e: any) {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -40,14 +40,6 @@ const Page = () => {
   return (
     <form className="text-center" onSubmit={onSubmit}>
       <div className="flex flex-col justify-center h-[450px] w-[350px] mx-auto gap-2">
-        <Input
-          placeholder="Name"
-          id="name"
-          name="name"
-          type="text"
-          onChange={handleChange}
-          value={state.name}
-        />
         <Input
           placeholder="Email"
           id="email"
@@ -68,7 +60,7 @@ const Page = () => {
       </div>
       <div>
         <div>
-          Do you have an account ? <Link href="/login">Sign in</Link>
+          Haven't got an account ? <Link href="/register">Sign up</Link>
         </div>
       </div>
     </form>
