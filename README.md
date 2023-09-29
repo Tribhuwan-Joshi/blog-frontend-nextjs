@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
+## Blog App
+### Tech stack
+- Next 13
+- Next-Auth
+- Tailwind
+- Prisma
+- MongoDB Atlas
 ## Getting Started
 
 First, run the development server:
