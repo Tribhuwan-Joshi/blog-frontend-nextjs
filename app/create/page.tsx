@@ -4,7 +4,7 @@ import React, { ChangeEvent, FormEvent, useMemo, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
-import Input from "@/components/input/Input";
+import Input from "@/components/Input/Input";
 import ImageUpload from "@/components/ImageUpload";
 
 interface InitalStateProps {
