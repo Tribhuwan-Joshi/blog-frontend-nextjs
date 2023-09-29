@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 import Input from "@/components/Input/Input";
 import ImageUpload from "@/components/ImageUpload";
+
 interface InitalStateProps {
   name?: string;
   imageSrc: string;
