@@ -3,7 +3,7 @@
 import Input from "@/components/Input";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import axios from "axios";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 interface InitialStateProps {
   email: string;
